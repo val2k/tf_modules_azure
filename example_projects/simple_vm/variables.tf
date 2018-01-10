@@ -1,15 +1,15 @@
-variable "base_name" {
-    default = "testing" 
+variable "name" {
+    default = "test_name" 
 }
 variable "location" {
     default = "North Europe"
 }
 variable "vnet_name" {
-    default = "vnettest1"
+    default = "vnetest"
 }
 variable "subnet_name" {
-    default = "subnettest1"
+    default = "subnetest"
 }
 variable "nic_name" {
-    default = "nictest1"
+    default = "nictest"
 }

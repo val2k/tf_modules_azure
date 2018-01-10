@@ -5,12 +5,11 @@ resource "random_id" "rdm_suffix" {
 resource "azurerm_automation_account" "auto_account" {
     name                     = "${format("%sstacctst%s", var.name, random_id.rdm_suffix.hex)}"
     location                 = "${var.location}"
-    resource_group_name      = "${var.rscg_name}"
+    resource_group_name      = "${var.resource_group_name}"
 
     sku {
         name = "Basic"
     }
-
     tags {
         environment = "development"
     }
