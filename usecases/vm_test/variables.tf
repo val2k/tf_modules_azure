@@ -1,4 +1,6 @@
-variable "base_name" {}
+variable "base_name" {
+    default = "testing" 
+}
 variable "location" {
     default = "North Europe"
 }

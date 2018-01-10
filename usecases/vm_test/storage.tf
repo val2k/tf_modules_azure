@@ -1,5 +1,5 @@
 module "storage" {
-    source = "../../storage_account"
+    source = "../../storage_accounts"
     
     name                   = "${var.base_name}"
     location               = "${var.location}"
