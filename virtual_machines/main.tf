@@ -4,8 +4,8 @@ resource "random_id" "rdm_suffix" {
 
 resource "azurerm_virtual_machine" "vm" {
   name                  = "acctvm"
-  location              = "West US 2"
-  resource_group_name   = "${azurerm_resource_group.vm.name}"
+  location              = "${var.location}"
+  resource_group_name   = "${var.resource_grp_name}"
   network_interface_ids = ["${azurerm_network_interface.vm.id}"]
   vm_size               = "Standard_DS1_v2"
 

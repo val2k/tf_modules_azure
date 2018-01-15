@@ -4,6 +4,9 @@ variable "name" {
 variable "location" {
     default = "North Europe"
 }
+variable "resource_grp_name" {
+    default = "vnetest"
+}
 variable "vnet_name" {
     default = "vnetest"
 }
