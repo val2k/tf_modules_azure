@@ -7,6 +7,9 @@ variable "location" {
 variable "resource_grp_name" {
     default = "vnetest"
 }
+variable "vm_name" {
+    default = "vmtest"
+}
 variable "vnet_name" {
     default = "vnetest"
 }

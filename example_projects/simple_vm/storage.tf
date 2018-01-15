@@ -3,5 +3,5 @@ module "storage" {
     
     name                   = "${var.name}"
     location               = "${var.location}"
-    resource_grp_name      = "${module.resource_grp.name}"
+    resource_grp_name      = "${module.resource_group.name}"
 }
