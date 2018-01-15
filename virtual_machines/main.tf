@@ -3,10 +3,10 @@ resource "random_id" "rdm_suffix" {
 }
 
 resource "azurerm_virtual_machine" "vm" {
-  name                  = "acctvm"
+  name                  = "${var.name}"
   location              = "${var.location}"
   resource_group_name   = "${var.resource_grp_name}"
-  network_interface_ids = ["${azurerm_network_interface.vm.id}"]
+  network_interface_ids = ["${var.nic_id}"]
   vm_size               = "Standard_DS1_v2"
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM

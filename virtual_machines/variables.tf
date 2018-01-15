@@ -1,3 +1,4 @@
-variable "resource_group_name" {}
+variable "resource_grp_name" {}
 variable "name" {}
 variable "location" {}
+variable "nic_id" {}

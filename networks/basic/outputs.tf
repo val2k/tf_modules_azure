@@ -9,3 +9,7 @@ output "subnet_name" {
 output "nic_name" {
 	value = "${azurerm_network_interface.nic.nic_name}"
 }
+
+output "nic_id" {
+	value = "${azurerm_network_interface.nic.id}"
+}
