@@ -2,10 +2,23 @@ resource "random_id" "rdm_suffix" {
     byte_length = 3
 }
 
+resource "azurerm_managed_disk" "managed_disk" {
+  name = "acctestmd"
+  location = "${var.location}"
+  resource_group_name = "${var.resource_group_name}"
+  storage_account_type = "Standard_LRS"
+  create_option = "Empty"
+  disk_size_gb = "1"
+
+  tags {
+    environment = "staging"
+  }
+}
+
 resource "azurerm_virtual_machine" "vm" {
   name                  = "${var.name}"
   location              = "${var.location}"
-  resource_group_name   = "${var.resource_grp_name}"
+  resource_group_name   = "${var.resource_group_name}"
   network_interface_ids = ["${var.nic_id}"]
   vm_size               = "Standard_DS1_v2"
 
@@ -39,11 +52,11 @@ resource "azurerm_virtual_machine" "vm" {
   }
 
   storage_data_disk {
-    name            = "${azurerm_managed_disk.vm.name}"
-    managed_disk_id = "${azurerm_managed_disk.vm.id}"
+    name            = "${azurerm_managed_disk.managed_disk.name}"
+    managed_disk_id = "${azurerm_managed_disk.managed_disk.id}"
     create_option   = "Attach"
     lun             = 1
-    disk_size_gb    = "${azurerm_managed_disk.vm.disk_size_gb}"
+    disk_size_gb    = "${azurerm_managed_disk.managed_disk.disk_size_gb}"
   }
 
   os_profile {

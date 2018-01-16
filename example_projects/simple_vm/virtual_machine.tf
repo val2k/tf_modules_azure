@@ -3,6 +3,6 @@ module "vm" {
     
     name                   = "${var.vm_name}"
     location               = "${var.location}"
-    resource_grp_name      = "${module.resource_grp.name}"
+    resource_group_name    = "${module.resource_group.name}"
     nic_id                 = "${module.networking.nic_id}"
 }
