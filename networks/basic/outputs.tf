@@ -3,11 +3,11 @@ output "vnet_name" {
 }
 
 output "subnet_name" {
-	value = "${azurerm_subnet.subnet.subnet_name}"
+	value = "${azurerm_subnet.subnet.name}"
 }
 
 output "nic_name" {
-	value = "${azurerm_network_interface.nic.nic_name}"
+	value = "${azurerm_network_interface.nic.name}"
 }
 
 output "nic_id" {

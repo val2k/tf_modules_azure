@@ -3,6 +3,6 @@ resource "random_id" "rdm_suffix" {
 }
 
 resource "azurerm_resource_group" "resource_group" {
-    name     = "${format("RG-%s-%s", var.name, random_id.rdm_suffix.hex)}"
+    name     = "${var.name}"
     location = "${var.location}"
 }
