@@ -1,5 +1,6 @@
 variable "resource_group_name" {}
-variable "name" {}
+variable "storage_name" {}
+variable "container_name" {}
 variable "location" {}
 variable "tier" {
     description = "Standard: , Premium: "
