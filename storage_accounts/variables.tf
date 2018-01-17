@@ -1,16 +1,30 @@
-variable "resource_group_name" {}
-variable "storage_name" {}
-variable "container_name" {}
-variable "location" {}
+variable "resource_group_name" {
+    type = "string"
+}
+
+variable "storage_name" {
+    type = "string"
+}
+
+variable "container_name" {
+    type = "string"
+}
+
+variable "location" {
+    type = "string"
+}
+
 variable "tier" {
-    description = "Standard: , Premium: "
+    type = "string"
     default = "Standard" 
 }
+
 variable "replication_type" {
-    description = "LRS: , GRS: "
+    type = "string"
     default = "LRS"
 }
+
 variable "container_access_type" {
-    description = ""
+    type = "string"
     default     = "private"
 }
