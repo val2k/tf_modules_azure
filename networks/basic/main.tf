@@ -14,10 +14,12 @@ resource "azurerm_subnet" "subnet" {
     resource_group_name  = "${var.resource_group_name}"
     virtual_network_name = "${var.vnet_name}"
     address_prefix       = "10.0.2.0/24"
+
+    depends_on = ["azurerm_virtual_network.vnet"]
 }
 
 resource "azurerm_network_interface" "nic" {
-    name                = "${var.nic_name}"
+    name                = "nic-${var.base_name}"
     location            = "${var.location}"
     resource_group_name = "${var.resource_group_name}"
 

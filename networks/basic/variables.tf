@@ -2,6 +2,10 @@ variable "nic_name" {
     type = "string"
 }
 
+variable "base_name" {
+    type = "string"
+}
+
 variable "vnet_name" {
     type = "string"
 }

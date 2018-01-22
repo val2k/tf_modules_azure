@@ -3,30 +3,28 @@
 variable "location" {
     default = "North Europe"
 }
-variable "resource_group_name" {
-    default = "valerianterraform-rsc-grp"
-}
-variable "resource_group_name_lst" {
-    default = ["valerianterraformliste-rsc-grp", "valerianterraform-rscnet-grp"]
-}
-#variable "resource_groups" {
-#    type = "map"
-#
-#    default = {
-#        name = "storageaccbuildxyz"
-#    }
-#    default = ["valerianterraformliste-rsc-grp", "valerianterraform-rscnet-grp"]
-#}
 
 variable "base_name" {
-    default = "testazazyqd"
+    default = "tftstbsnm"
+}
+
+variable "networking_resource_group" {
+    default = "RG-VN-E0-VAL"
+}
+
+variable "resource_group" {
+    type = "map"
+
+    default = {
+        name = "RG-TFTST-VAL-DEV"
+    }
 }
 
 variable "vm" {
     type = "map"
 
     default = {
-        name = "vm-linux"
+        name = "uztftst01"
     }
 }
 
@@ -34,7 +32,7 @@ variable "storage_account" {
     type = "map"
 
     default = {
-        name = "storageaccbuildxyz"
+        name = "zstorageaccbuildev01"
     }
 }
 
@@ -54,7 +52,7 @@ variable "vnet" {
     }
 }
 
-variable "subnet_name" {
+variable "subnet" {
     type = "map"
 
     default = {
@@ -62,18 +60,18 @@ variable "subnet_name" {
     }
 }
 
-variable "nic_name" {
+variable "nic" {
     type = "map"
 
     default = {
-        name = "nic-private"
+        name = "nic-uprivate01"
     }
 }
 
-variable "automation_name" {
+variable "automation" {
     type = "map"
 
     default = {
-        name = "automation"
+        name = "aa-tftst-val-dev"
     }
 }

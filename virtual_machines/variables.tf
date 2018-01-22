@@ -13,3 +13,8 @@ variable "location" {
 variable "nic_id" {
     type = "string"
 }
+
+variable "osdisk_name" {
+    type    = "string"
+    default = "osdisk_uzdsk01"
+}
